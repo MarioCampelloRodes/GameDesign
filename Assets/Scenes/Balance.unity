@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 559685810}
   - component: {fileID: 559685814}
   - component: {fileID: 559685815}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Ball
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1002,8 +1002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933f56cbe37b09440b29337bd7d2003e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3.5
-  speedMult: 12
+  maxSpeed: 4
+  speedMult: 30
 --- !u!1 &635544114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 41285326090127307, guid: 7051d1d0cb099584eb44534d22d9e55c,
@@ -1316,6 +1316,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725593611}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &767873119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767873120}
+  - component: {fileID: 767873121}
+  m_Layer: 0
+  m_Name: LaserSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &767873120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767873119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &767873121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767873119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082b1fadee89b674898a60b504b2889b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laser: {fileID: 1647486109}
+  minMaxTime: {x: 0.5, y: 1.5}
 --- !u!1 &856730638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,13 +1675,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958844603}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.3113317, y: -0.0000027418137, z: 0.0000009089708, w: -0.95030135}
-  m_LocalPosition: {x: -0, y: 9.65, z: -15.17}
+  m_LocalRotation: {x: -0.392227, y: -0.0000026530831, z: 0.0000011423302, w: -0.91986847}
+  m_LocalPosition: {x: -0, y: 17.66, z: -17.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 36.279, y: -360, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.186, y: -360, z: 0}
 --- !u!114 &958844607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2375,7 +2421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1647486108
 Transform:
   m_ObjectHideFlags: 0
@@ -2385,7 +2431,7 @@ Transform:
   m_GameObject: {fileID: 1647486107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2408,6 +2454,8 @@ MonoBehaviour:
   leftPoint: {fileID: 1367624889}
   rightPoint: {fileID: 2135463190}
   isActive: 0
+  delay: 1
+  duration: 2
   detectLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3153,6 +3201,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chupacabra
       objectReference: {fileID: 0}
+    - target: {fileID: 4223999065363492817, guid: 7051d1d0cb099584eb44534d22d9e55c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3310,3 +3363,4 @@ SceneRoots:
   - {fileID: 3918062494699670281}
   - {fileID: 2130767614}
   - {fileID: 1647486108}
+  - {fileID: 767873120}
